@@ -89,7 +89,7 @@ app.post("/sup",urlencodedParcer, function(req,res,next){
             return
         }
     data =JSON.parse(jsonString) ;
-    data.splice(req.body.j,1);
+    data.splice(j,1);
     dataUpdated=JSON.stringify(data);
     fs.writeFileSync('Produit.Json', dataUpdated);
     res.end();
