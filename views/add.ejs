@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/index.css">
+    <link rel="stylesheet" href="/static/style/add.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>local</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">BLACK-A</label>
+        <ul>
+          <li><a  href="/home">Home</a></li>
+          <li><a  href="/add">Modifie</a></li>
+          <li><a class="active" href="/inscription">INSCRIPTION</a></li>
+        
+        </ul>
+      </nav>
+      <div class="espace"></div>
+      <div class="cont" >
+        <div class="row" >
+            <h4 >Ajouter une Voiture </h4>
+            <input type="button"  value="+" id="bn" class="bn">
+        </div>
+          <br><br><br><br>
+          <div style="margin-left: 100px;" >
+                <form action="/add"  method="POST">
+                    <div class="marque">
+                <select name="marque" id="aa" class="form-control form-control-lg">
+                    <option value="https://www.moteur.ma/media/images/brands/resized/dacia.png">Dacia</option>
+                    <option value="https://www.moteur.ma/media/images/brands/resized/bmw.png">BMW</option>
+                    <option value="https://www.moteur.ma/media/images/brands/resized/volkswagen.png">Volkswagen</option>
+                    <option value="https://www.moteur.ma/media/images/brands/resized/mercedes.png">Mercedes</option>
+                    <option value="https://www.moteur.ma/media/images/brands/resized/peugeot.png">Peugeot</option>
+                </select>
+            </div>
+                <div class="module">
+                    <h6>module</h6>
+                    <input  type="text" name="module" class="form-control">
+                </div>
+                <div class="img">
+                    <h6>Url d'image</h6>
+                    <input type="text" name="Url"  class="form-control" >
+                </div>
+                <div class="version">
+                    <h6>Version</h6>
+                    <input type="text" name="version"  class="form-control">
+                </div>
+                <div class="carburant">
+                    <h6>carburant</h6>
+                    <select name="carburant" id=""  class="form-control form-control-lg">
+                        <option value="Essence">Essence</option>
+                        <option value="Diesel">Diesel</option>
+                    </select>
+                </div>
+                <div class="des">
+                    <h6>Description</h6>
+                    <input type="text" name="Description"  class="form-control">
+                </div>
+                <div class="prix">
+                    <h6>prix</h6>
+                    <input type="text" name="prix"  class="form-control">
+                </div><br><br>
+
+             <input type="submit" value="Ajouter">
+                </form>
+          </div>
+          <div class="espace"></div>
+          <div class="row" >
+            <h4 >Supprimer une Voiture </h4>
+            <input type="button"  value="+" id="bn">
+        </div>
+        <br><br><br>
+        <% if (locals.name) { %>
+            <h2 style="color: red;"><%= name %></h2>
+          <% } %>
+        <form action="/sup" method="POST">
+            <h6>Entre ID</h6>
+            <input type="text" name="ID" id="" class="form-control">
+            <br><br>
+            <input type="submit" value="Supprimer" >
+        </form>
+        <div class="espace"></div>
+        <div class="row" >
+            <h4 >Modifie une Voiture </h4>
+            <input type="button"  value="+" id="bn">
+        </div>
+        <div>
+        <br><br><br>
+        <% if (locals.name1) { %>
+            <h2 style="color: red;"><%= name1 %></h2>
+          <% } %>
+        <form action="/mod" method="POST">
+            <h6>Entre ID</h6>
+            <input type="text" name="ID" id="" class="form-control">
+            <br><br>
+            <input type="submit" value="Modifie" >
+        </form> <br><br>
+        
+           
+        
+        </div>
+     
+         
+        
+      </div>
+      <div class="table" style="background-color: black;"::::::>
+      <form action="/ok" method="POST">
+        <table class="table table-hover table-dark" style="background-color: black;">
+            <thead>
+              <tr>
+                <th scope="col">module</th>
+                <th scope="col">Version</th>
+                <th scope="col">Url d'image</th>
+                <th scope="col">prix</th>
+                <th scope="col" style="display: none;">prix</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <% if (locals.T) { %>
+                
+                <th scope="row"><input type="text" name="module" value="<%= T.value.module %>"></th>
+                <td><input type="text" name="version" value="<%= T.value.version %>"></td>
+                <td><input type="text" name="Url" value="<%= T.value.Url %>"></td>
+                <td><input type="text" name="prix" value="<%= T.value.prix %>"></td>
+                <% if (locals.idd) { %>
+               <td style="display: none;"><input type="text" name="id" value="<%= idd %>"></td>
+                    <% } %>
+              <% } %>
+               </tr>
+            </tbody>
+          </table>
+         <button  type="submit">ok</button>
+        
+    </form>
+</div>
+      
+      
+      <div class="espace"></div>
+      
+      
+    
+
+
+
+      <script src="/static/javascript/all.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="/static/javascript/add.js"></script>
+<script src="public\javascript\all.min.js"></script>
+<script src="public\javascript\add.js"></script>
+</body>
+</html>

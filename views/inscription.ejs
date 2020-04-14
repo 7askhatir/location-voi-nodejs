@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/inscr.css">
+    <title>inscription</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">BLACK-A</label>
+        <ul>
+          <li><a  href="/home">Home</a></li>
+          <li><a  href="/add">Modifie</a></li>
+          <li><a class="active" href="/inscription">INSCRIPTION</a></li>
+        
+        </ul>
+      </nav>
+      <div class="formul">
+      <div id="message" >
+				<h3>Tous les champs sont obligatoires </h3>
+				</div>
+					<form id="inscription" name="inscription" method="POST" action="inscription">
+						<div >
+							<select id="civilite" onchange="select()" name="ville"  >
+								<option value="0" ><h3>ville  </h3></option >
+								<option value="Agadir">Agadir</option>
+                                <option value="Essaouira">Essaouira</option>
+                                <option value="Safi">Safi</option>
+                                <option value="Tanger">Tanger</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Rabat">Rabat</option>
+                                <option value="Tanger">Tanger</option>
+							</select>
+						</div>					
+						<div class="div_input_form">
+						<input type="text" name="nom" id="Nom" maxlength="50" class="input_form" value='Votre nom' onclick="supprimer('Votre nom',this.id)"  onblur="test('Votre nom',this.id)"  onmouseout="rempler('Votre nom',this.id)" />
+						</div>
+						<div class="div_input_form">
+						<input type="text" name="prenom" id="Prenom" maxlength="50" class="input_form" value='Votre prénom' onclick="supprimer('Votre prénom',this.id)" onblur="test('Votre prénom',this.id)" onmouseout="rempler('Votre prénom',this.id)"     />
+						</div>
+						<div class="div_input_form">
+                        <input type="date" value="date" name="Date de naissance">
+						</div>
+						<div class="div_input_form">
+						<input type="text" name="Email" id="mail_inscr" maxlength="150" class="input_form" value='Votre mail' onclick="supprimer('Votre mail',this.id)" onblur="test('Votre mail',this.id)"  onmouseout="rempler('Votre mail',this.id)" />
+						</div>
+						<div class="div_input_form">
+						<input type="text"  id="mail2_inscr" maxlength="150" class="input_form" value='Confirmer le mail' onclick="supprimer('Confirmer le mail',this.id)"onblur="test('Confirmer le mail',this.id)" onmouseout="rempler('Confirmer le mail',this.id)" />
+						</div>
+						<div class="div_input_form">
+						Votre mot de passe : <br />
+						<input type="password"  id="mp_inscr" maxlength="10" class="input_form" value="Mot de passe" onclick="supprimer('Mot de passe',this.id)" onblur="test('Mot de passe',this.id)" onmouseout="rempler('Mot de passe',this.id)" />
+						</div>
+						<div class="div_input_form">
+						Confirmer le mot de passe :<br />
+						<input type="password"  id="mp_conf" maxlength="10" class="input_form" value="Confirmer MP" onclick="supprimer('Confirmer MP',this.id)" onblur="test('Confirmer MP',this.id)" onmouseout="rempler('Confirmer MP',this.id)" />
+						</div><br>							
+						<div class="div_input_form">
+						<input type="submit" type="button" name="valid_inscr" id="valid_inscr" class="input_form" value="Valider"  onclick="envoyer()"/>
+						</div>	
+					</form>			
+				</div>
+      </div>
+    </div>
+    <div class="back">
+
+    </div>
+
+<script src="/static/javascript/js_validation.js"></script>
+      
+
+</body>
+</html>

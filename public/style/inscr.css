@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  body {
+    font-family: monospace;
+    background-color: #000000;
+    overflow-x: hidden;
+  }
+  
+  nav {
+    background: #000000;
+    height: 80px;
+    width: 100%;
+  }
+  
+  nav .logo {
+    color: #ffffff;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  
+  nav ul li a {
+    color: #ffffff;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  
+  a.active, a:hover {
+    background: #000000;
+    -webkit-transition: 5s;
+    transition: 5s;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: #ffffff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  @media (max-width: 750px) {
+    label.logo {
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 16px;
+    }
+    .checkbtn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #000000;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      -webkit-transition: all .5s;
+      transition: all .5s;
+      z-index: 100;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover, a.active {
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+  }
+  
+  .espace {
+    width: 100%;
+    height: 150px;
+    background-color: #000000;
+  }
+  
+  .formul {
+    width: 500px;
+    padding: 40px;
+    position: relative;
+    left: 10%;
+    top: 50%;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+    z-index: 20;
+  }
+  
+  .formul input, .formul select {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 350px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  
+  .formul input[type="button"] {
+    padding: 14px 40px;
+    border: 2px solid #36c023;
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  select {
+    border: none;
+    border-radius: none;
+  }
+  
+  select option {
+    color: #ffffff;
+    background-color: #000000;
+  }
+  
+  .back {
+    position: absolute;
+    height: 110%;
+    width: 65%;
+    left: 40%;
+    background-image: url("https://i.pinimg.com/originals/f6/b3/b3/f6b3b3957dcabe6449c99acc1e85d5a1.jpg");
+    background: cover;
+    background-repeat: no-repeat;
+    top: 120px;
+    z-index: 19;
+  }
+  
+  @media (max-width: 750px) {
+    .back {
+      display: none;
+    }
+  }
+  /*# sourceMappingURL=inscr.css.map */
